@@ -12,7 +12,7 @@ jobs:
     with:
       runs-on: "['ubuntu-latest']"
       registry-url: docker.io
-      name: ${{ secrets.DOCKER_USER }}/i-dont-know-security
+      name: iknowgha/i-dont-know-security
       # Tag with 'latest' tag when merging to main
       tag-latest: true
       push: true
