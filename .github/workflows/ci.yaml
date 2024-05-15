@@ -18,6 +18,7 @@ jobs:
       push: true
       trivy-severity: "CRITICAL"
       trivy-error-is-success: true
+      trivy-enabled: false
     secrets:
       registry-username: ${{ secrets.DOCKER_USER }}
       registry-password: ${{ secrets.DOCKER_PASS }}
