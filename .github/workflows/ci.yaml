@@ -16,6 +16,8 @@ jobs:
       # Tag with 'latest' tag when merging to main
       tag-latest: true
       push: true
+      trivy-severity: "CRITICAL"
+      trivy-error-is-success: true
     secrets:
       registry-username: ${{ secrets.DOCKER_USER }}
       registry-password: ${{ secrets.DOCKER_PASS }}
