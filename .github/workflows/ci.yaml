@@ -1,0 +1,22 @@
+name: CI with secrets
+
+on:
+  push:
+    branches: [main]
+
+permissions: write-all
+
+jobs:
+  build-push:
+    uses: nrkno/github-workflow-docker-build-push/.github/workflows/workflow.yaml@v4.0.0
+    with:
+      runs-on: "['ubuntu-latest']"
+      registry-url: docker.io
+      name: ${{ secrets.DOCKER_USER }}/i-dont-know-security
+      # Tag with 'latest' tag when merging to main
+      tag-latest: true
+      push: true
+    secrets:
+      registry-username: ${{ secrets.DOCKER_PASS }}
+      registry-password: ${{ secrets.DOCKER_USER }}
+      token: ${{ secrets.CI_TOKEN }}
