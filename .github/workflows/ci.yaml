@@ -17,6 +17,6 @@ jobs:
       tag-latest: true
       push: true
     secrets:
-      registry-username: ${{ secrets.DOCKER_PASS }}
-      registry-password: ${{ secrets.DOCKER_USER }}
+      registry-username: ${{ secrets.DOCKER_USER }}
+      registry-password: ${{ secrets.DOCKER_PASS }}
       token: ${{ secrets.CI_TOKEN }}
